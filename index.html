@@ -5,9 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra papel e tesoura</title>
-    <script src="script.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Pedra Papel Tesoura</h1>
+    <header>
+            <h1>Pedra Papel Tesoura</h1> 
+            <h2>Dispute uma partida de 'Pedra Papel e Tesousa' contra Jarvas Cript</h2>
+            <h3>O primeiro que chegar a 3 pontos vence</h3>
+            <p class="regras"><img src="./imagens/sketch-logo.svg" alt="pedra"> Pedra vence Tesoura <img src="./imagens/scissors.svg" alt="tesoura"><br> 
+                <img src="./imagens/newspaper-clipping.svg" alt="papel"> Papel vence Pedra <img src="./imagens/sketch-logo.svg" alt="pedra"><br>
+                <img src="./imagens/scissors.svg" alt="tesoura"> Tesoura vence Papel <img src="./imagens/newspaper-clipping.svg" alt="papel">
+            </p> 
+        </header>
+    <main>
+        <section class="pontuacao">
+            <div class="pontosUser">
+                <img src="./imagens/arrow-up.svg" alt="seta verde para cima">
+                <p>Seus pontos</p>
+                <p class="numeroPontos">0</p>
+            </div>
+            <div class="pontosJarvas">
+                <img src="./imagens/arrow-down.svg" alt="seta vermelha para baixo">
+                <p>Jarvas Cript</p>
+                <p class="numeroPontos">0</p>
+            </div>
+        </section>
+        <section class="logBatalha">
+            <p>Você escolheu PEDRA <img src="./imagens/sketch-logo.svg" alt="pedra"> </p>
+            <p>Jarvas escolheu PAPEL <img src="./imagens/newspaper-clipping.svg" alt="papel"> </p>
+            <p>+1 ponto para Jarvas! <img src="./imagens/scissors.svg" alt="tesoura"> </p>
+        </section>
+        <section class="controles">
+            <button class="btnControl" alt="pedra">
+                Pedra
+            </button>
+            <button class="btnControl" alt="papel">
+                Papel
+            </button>
+            <button class="btnControl" alt="tesoura">
+                Tesoura
+            </button>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
