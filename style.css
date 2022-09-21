@@ -47,6 +47,9 @@ header h1 {
     padding: 10px;
     border-radius: 6px;
     box-shadow: 0px 4px 9px #171a1f;
+    font-weight: bold;
+    padding: 16px;
+    gap: 9px;
 }
 
 .pontosUser img,
@@ -65,9 +68,8 @@ header h1 {
     background-color: #f22128;
 }
 
-.pontosJarvas .numeroPontos, .pontosUser .numeroPontos {
+.numeroPontos {
     font-size: 2rem;
-    font-weight: bold;
 }
 
 .logBatalha {
@@ -75,25 +77,15 @@ header h1 {
     background-color: #f0f8fe;
     border-radius: 6px;
     box-shadow: 0px 4px 9px #171a1f;
-}
-
-.logBatalha,
-.controles {
-    width: 330px;
-    text-align: center;
-    height: 150px;
-}
-
-.logBatalha {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 150px;
 }
 
-.logBatalha p {
-    display: flex;
-    align-items: center;
+.controles {
+    text-align: center;
 }
 
 .controles button {
@@ -124,7 +116,6 @@ header h1 {
 
 .miniResultado {
     font-weight: bold;
-    font-weight: bold;
     margin-top: 13px;
     height: 34px;
 }
@@ -154,8 +145,3 @@ header h1 {
     color: #171a1f;
     background: #a9aaae;
 }
-
-.pontosJarvas p, .pontosUser p {
-    padding: 5px;
-    font-weight: bold;
-} 

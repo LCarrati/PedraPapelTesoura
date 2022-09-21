@@ -1,3 +1,4 @@
+// Declarar variáveis
 const OPCOES = ['pedra', 'papel', 'tesoura']
 let opcaoUsuario
 let opcaoComputador
@@ -5,26 +6,62 @@ let resultado = ''
 let pontosUsuario = 0
 let pontosJarvas = 0
 let escolhido = ''
+const jogadorPedra = `
+<p>
+    Você escolheu <strong>&nbsp;PEDRA&nbsp;</strong>
+    <img src="./imagens/sketch-logo.svg" alt="pedra">
+</p>`
+const jogadorPapel = `
+<p>
+    Você escolheu <strong>&nbsp;PAPEL&nbsp;</strong>
+    <img src="./imagens/newspaper-clipping.svg" alt="papel">
+</p>`
+const jogadorTesoura = `
+<p>
+    Você escolheu <strong>&nbsp;TESOURA&nbsp;</strong>
+    <img src="./imagens/scissors.svg" alt="tesoura">
+</p>`
 
+const jarvasPedra = `
+<p>
+    Jarvas escolheu <strong>&nbsp;PEDRA&nbsp;</strong>
+    <img src="./imagens/sketch-logo.svg" alt="pedra">
+</p>`
+
+const jarvasPapel = `
+<p>
+    Jarvas escolheu <strong>&nbsp;PAPEL&nbsp;</strong>
+    <img src="./imagens/newspaper-clipping.svg" alt="papel">
+</p>`
+const jarvasTesoura = `
+<p>
+    Jarvas escolheu <strong>&nbsp;TESOURA&nbsp;</strong>
+    <img src="./imagens/scissors.svg" alt="tesoura">
+</p>`
+
+
+// Determinar escolha do Jarvas
 function opcaoAleatoria() {
     let index = Math.floor(Math.random() * (4 - 1) + 1);
     return OPCOES[index]
 }
 
+
+// Capturar escolha do usuário 
 let botoesOpcao = document.querySelectorAll('.btnControl') 
 
-    botoesOpcao.forEach(function (item) {
-        item.addEventListener("click", function (e) {
-            if (pontosUsuario < 3 && pontosJarvas <3){
+botoesOpcao.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+        if (pontosUsuario < 3 && pontosJarvas <3){
             escolhido = item.attributes.alt.nodeValue
-            jogarPartida(escolhido)}
-        })
-        })
+            jogarPartida(escolhido)
+        }
+    })
+})
 
+// Iniciar a partida
 function jogarPartida(opcaoUsuario) {
-    let opcaoComputador = opcaoAleatoria()
-    console.log('Você escolheu: ' + opcaoUsuario);
-    console.log('O computador escolheu: ' + opcaoComputador);
+    opcaoComputador = opcaoAleatoria()
     if (opcaoUsuario == 'pedra'){   
         if (opcaoComputador == 'pedra') {
             resultado = 'Deu EMPATE';
@@ -122,12 +159,13 @@ function jogarPartida(opcaoUsuario) {
                 ${resultado}
              </p>
              `}
-      
     }
-    console.log(resultado,pontosUsuario,pontosJarvas);
+    
+    // Atualizar quadro de pontos
     document.querySelector(".pontosUser > .numeroPontos").innerHTML = `<p>${pontosUsuario}</p>`
     document.querySelector(".pontosJarvas > .numeroPontos").innerHTML = `<p>${pontosJarvas}</p>` 
     
+    // Determinar fim de jogo
     if (pontosUsuario >= 3 || pontosJarvas >= 3){
         botoesOpcao.forEach(function (item) {
             item.disabled = true;})
@@ -140,16 +178,16 @@ function jogarPartida(opcaoUsuario) {
             document.querySelector(".logBatalha").innerHTML = `
             <p class="resultadoFinal">Que pena! Você perdeu!</p>
             <button class="restart" onclick="restart()">Jogar novamente</button>`
-
-
-
-            console.log('Mostrar popup informando resultado e um botao para reiniciar a partida. Se sim zera os pontos e reabilita os botoes. Senão deixa a mensagem na tela');}
+        }
     }    
 }
 
+
+// Reiniciar a partida
 function restart() {
     botoesOpcao.forEach(function (item) {
-        item.disabled = false;})
+        item.disabled = false;
+    })
     pontosJarvas = 0;
     pontosUsuario = 0;
     document.querySelector(".logBatalha").innerHTML = `
@@ -157,37 +195,3 @@ function restart() {
     document.querySelector(".pontosUser > .numeroPontos").innerHTML = `<p>${pontosUsuario}</p>`
     document.querySelector(".pontosJarvas > .numeroPontos").innerHTML = `<p>${pontosJarvas}</p>` 
 }
-
-
-const jogadorPedra = `
-<p>
-    Você escolheu <strong>&nbsp;PEDRA&nbsp;</strong>
-    <img src="./imagens/sketch-logo.svg" alt="pedra">
-</p>`
-const jogadorPapel = `
-<p>
-    Você escolheu <strong>&nbsp;PAPEL&nbsp;</strong>
-    <img src="./imagens/newspaper-clipping.svg" alt="papel">
-</p>`
-const jogadorTesoura = `
-<p>
-    Você escolheu <strong>&nbsp;TESOURA&nbsp;</strong>
-    <img src="./imagens/scissors.svg" alt="tesoura">
-</p>`
-
-const jarvasPedra = `
-<p>
-    Jarvas escolheu <strong>&nbsp;PEDRA&nbsp;</strong>
-    <img src="./imagens/sketch-logo.svg" alt="pedra">
-</p>`
-
-const jarvasPapel = `
-<p>
-    Jarvas escolheu <strong>&nbsp;PAPEL&nbsp;</strong>
-    <img src="./imagens/newspaper-clipping.svg" alt="papel">
-</p>`
-const jarvasTesoura = `
-<p>
-    Jarvas escolheu <strong>&nbsp;TESOURA&nbsp;</strong>
-    <img src="./imagens/scissors.svg" alt="tesoura">
-</p>`
