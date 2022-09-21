@@ -18,10 +18,6 @@ let botoesOpcao = document.querySelectorAll('.btnControl')
             if (pontosUsuario < 3 && pontosJarvas <3){
             escolhido = item.attributes.alt.nodeValue
             jogarPartida(escolhido)}
-            // if (pontosUsuario < 3 && pontosJarvas <3){
-            // jogarPartida(escolhido);
-            // }
-            // else {console.log('endegame');}
         })
         })
 
@@ -31,7 +27,6 @@ function jogarPartida(opcaoUsuario) {
     console.log('O computador escolheu: ' + opcaoComputador);
     if (opcaoUsuario == 'pedra'){   
         if (opcaoComputador == 'pedra') {
-            // return pontosUsuario,
             resultado = 'Deu EMPATE';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorPedra}
@@ -43,8 +38,6 @@ function jogarPartida(opcaoUsuario) {
         } 
         else if (opcaoComputador == 'papel') {
             pontosJarvas++;
-            
-            // return pontosJarvas,pontosUsuario,
             resultado = '+1 para Jarvas!';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorPedra}
@@ -55,7 +48,6 @@ function jogarPartida(opcaoUsuario) {
              `
         }
         else {pontosUsuario++; 
-            // return pontosJarvas,pontosUsuario, 
             resultado = '+1 para você!';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorPedra}
@@ -68,7 +60,6 @@ function jogarPartida(opcaoUsuario) {
     else if (opcaoUsuario == 'papel'){   
         if (opcaoComputador == 'pedra') {
             pontosUsuario++;
-            // return pontosJarvas, pontosUsuario, 
             resultado = '+1 para você!';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorPapel}
@@ -79,7 +70,6 @@ function jogarPartida(opcaoUsuario) {
              `}
         
         else if (opcaoComputador == 'papel') {
-            // return pontosJarvas,pontosUsuario,
             resultado = 'Deu EMPATE';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorPapel}
@@ -90,7 +80,6 @@ function jogarPartida(opcaoUsuario) {
              `           
         }
         else {pontosJarvas++; 
-            // return pontosJarvas,pontosUsuario,
             resultado = '+1 para Jarvas!';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorPapel}
@@ -103,7 +92,6 @@ function jogarPartida(opcaoUsuario) {
     else if (opcaoUsuario == 'tesoura'){   
         if (opcaoComputador == 'pedra') {
             pontosJarvas++;
-            // return pontosJarvas,pontosUsuario, 
             resultado = '+1 para Jarvas!'
             ;
             document.querySelector(".logBatalha").innerHTML = 
@@ -116,7 +104,6 @@ function jogarPartida(opcaoUsuario) {
         } 
         else if (opcaoComputador == 'papel') {
             pontosUsuario++;
-            // return pontosJarvas,pontosUsuario, 
             resultado = '+1 para você!';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorTesoura}
@@ -127,7 +114,6 @@ function jogarPartida(opcaoUsuario) {
              `
         }
         else {
-            // return pontosJarvas,pontosUsuario, 
             resultado = 'Deu EMPATE';
             document.querySelector(".logBatalha").innerHTML = 
             `${jogadorTesoura}
@@ -138,7 +124,6 @@ function jogarPartida(opcaoUsuario) {
              `}
       
     }
-    // else {console.log('error');}
     console.log(resultado,pontosUsuario,pontosJarvas);
     document.querySelector(".pontosUser > .numeroPontos").innerHTML = `<p>${pontosUsuario}</p>`
     document.querySelector(".pontosJarvas > .numeroPontos").innerHTML = `<p>${pontosJarvas}</p>` 
@@ -206,60 +191,3 @@ const jarvasTesoura = `
     Jarvas escolheu <strong>&nbsp;TESOURA&nbsp;</strong>
     <img src="./imagens/scissors.svg" alt="tesoura">
 </p>`
-
-
-
-
-
-
-// function jogarPartida() {
-//     let opcaoUsuario = prompt('Qual a sua escolha? \n Pedra, papel ou tesoura?').toLowerCase()
-//     let opcaoComputador = opcaoAleatoria()
-//     console.log('Você escolheu: ' + opcaoUsuario);
-//     console.log('O computador escolheu: ' + opcaoComputador);
-//     if (opcaoUsuario == 'pedra'){   
-//         if (opcaoComputador == 'pedra') {
-//             return pontosUsuario,resultado = 'Empate';
-//         } 
-//         else if (opcaoComputador == 'papel') {
-//             return pontosUsuario,resultado = 'Você perdeu!';
-//         }
-//         else {pontosUsuario++; return pontosUsuario, resultado = 'Você venceu!';}
-//     }
-//     else if (opcaoUsuario == 'papel'){   
-//         if (opcaoComputador == 'pedra') {
-//             pontosUsuario++
-//             return pontosUsuario, resultado = 'Você venceu!';
-//         } 
-//         else if (opcaoComputador == 'papel') {
-//             return pontosUsuario,resultado = 'Empate';
-//         }
-//         else {return pontosUsuario,resultado = 'Você perdeu!';}
-//     }
-//     else if (opcaoUsuario == 'tesoura'){   
-//         if (opcaoComputador == 'pedra') {
-//             return pontosUsuario, resultado = 'Você perdeu!';
-//         } 
-//         else if (opcaoComputador == 'papel') {
-//             pontosUsuario++
-//             return pontosUsuario, resultado = 'Você venceu!';
-//         }
-//         else {return pontosUsuario, resultado = 'Empate';}
-//     }
-//     else {console.log('error');}
-// }
-
-// function melhorDeCinco() {
-//     for (let i = 0; i < 5; i++) {
-//         jogarPartida()
-
-//         console.log(resultado);
-//         console.log(pontosUsuario);
-//     }
-//     if (pontosUsuario >=3) {
-//         console.log('Você venceu a melhor de 5');
-//     }
-//     else {console.log('Você perdeu a melhor de 5');}
-// }
-
-// melhorDeCinco()
