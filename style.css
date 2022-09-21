@@ -16,11 +16,11 @@ header {
 }
 
 header h1 {
-    margin: 40px
+    margin: 20px;
 }
 
 .regras {
-    margin: 20px 0 50px;
+    margin: 20px 0;
 }
 
 .regras img,
@@ -33,7 +33,7 @@ header h1 {
     display: flex;
     gap: 30px;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .pontosUser,
@@ -73,7 +73,7 @@ header h1 {
 }
 
 .logBatalha {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     background-color: #f0f8fe;
     border-radius: 6px;
     box-shadow: 0px 4px 9px #171a1f;
@@ -86,6 +86,7 @@ header h1 {
 
 .controles {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .controles button {
