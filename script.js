@@ -42,7 +42,7 @@ const jarvasTesoura = `
 
 // Determinar escolha do Jarvas
 function opcaoAleatoria() {
-    let index = Math.floor(Math.random() * (4 - 1) + 1);
+    let index = Math.floor(Math.random() * 3);
     return OPCOES[index]
 }
 
